@@ -1,0 +1,7 @@
+@mixin button-mixin($color, $color-value)
+    color: $white
+    background-color: $color-value
+    border-color: $color-value
+    &:hover
+        background-color: map-get($color-list-darker, $color)
+        border-color: map-get($color-list-darker, $color)

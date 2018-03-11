@@ -1,0 +1,95 @@
+.btn
+    display: inline-block
+    text-align: center
+    cursor: pointer
+    border: 1px solid transparent
+    padding: .375rem .75rem
+    text-decoration: none
+    border-radius: .25rem
+    font-size: 1rem
+    transition: $standart-transition
+    transition-duration: .3s 
+    transition-property: transform
+    transform: perspective(1px) translateZ(0)
+    -webkit-font-smoothing: antialiased
+
+@each $color, $color-value in $color-list
+    .btn-#{$color}
+        @include button-mixin($color, $color-value)
+
+.btn-grow
+    &:hover
+        transform: scale(1.1)
+
+.btn-shrink
+    &:hover
+        transform: scale(0.9)
+
+.btn-rotate
+    &:hover
+        transform: rotate(4deg)
+
+.btn-grow-rotate
+    &:hover
+        transform: scale(1.1) rotate(4deg)
+
+.btn-skew
+    &:hover
+        transform: skew(-10deg)
+
+.btn-pulse
+    @extend %btn-animation
+    &:hover
+        animation-name: pulse
+        animation-iteration-count: infinite
+
+.btn-push
+    @extend %btn-animation
+    &:hover
+        animation-name: push
+        animation-duration: 0.3s
+
+.btn-pop
+    @extend %btn-animation
+    &:hover
+        animation-name: pop
+        animation-duration: 0.3s
+        
+.btn-wobble-horizontal
+    @extend %btn-animation
+    &:hover
+        animation-name: wobble-horizontal
+
+.btn-wobble-vertical
+    @extend %btn-animation
+    &:hover
+        animation-name: wobble-vertical
+
+.btn-wobble-to-bottom
+    @extend %btn-animation
+    &:hover
+        animation-name: wobble-to-bottom
+
+.btn-wobble-to-top
+    @extend %btn-animation
+    &:hover
+        animation-name: wobble-to-top
+
+.btn-wobble-top
+    @extend %btn-animation
+    transform-origin: 0 100%;
+    &:hover
+        animation-name: wobble-top
+
+.btn-wobble-bottom
+    @extend %btn-animation
+    transform-origin: 100% 0;
+    &:hover
+        animation-name: wobble-bottom
+
+.btn-wobble-skew
+    @extend %btn-animation
+    &:hover
+        animation-name: wobble-skew
+
+

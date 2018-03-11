@@ -1,0 +1,245 @@
+.btn-pulse:hover, .btn-push:hover, .btn-pop:hover, .btn-wobble-horizontal:hover, .btn-wobble-vertical:hover, .btn-wobble-to-bottom:hover, .btn-wobble-to-top:hover, .btn-wobble-top:hover, .btn-wobble-bottom:hover, .btn-wobble-skew:hover {
+  animation-duration: 1s;
+  animation-timing-function: linear; }
+
+@keyframes pulse {
+  25% {
+    transform: scale(1.1); }
+  75% {
+    transform: scale(0.9); } }
+
+@keyframes push {
+  50% {
+    transform: scale(0.8); }
+  100% {
+    transform: scale(1); } }
+
+@keyframes pop {
+  50% {
+    transform: scale(1.2); } }
+
+@keyframes wobble-horizontal {
+  16.65% {
+    transform: translateX(8px); }
+  33.3% {
+    transform: translateX(-6px); }
+  49.95% {
+    transform: translateX(4px); }
+  66.6% {
+    transform: translateX(-2px); }
+  83.25% {
+    transform: translateX(1px); }
+  100% {
+    transform: translateX(0); } }
+
+@keyframes wobble-vertical {
+  16.65% {
+    transform: translateY(8px); }
+  33.3% {
+    transform: translateY(-6px); }
+  49.95% {
+    transform: translateY(4px); }
+  66.6% {
+    transform: translateY(-2px); }
+  83.25% {
+    transform: translateY(1px); }
+  100% {
+    transform: translateY(0); } }
+
+@keyframes wobble-to-bottom {
+  16.65% {
+    transform: translate(8px, 8px); }
+  33.3% {
+    transform: translate(-6px, -6px); }
+  49.95% {
+    transform: translate(4px, 4px); }
+  66.6% {
+    transform: translate(-2px, -2px); }
+  83.25% {
+    transform: translate(1px, 1px); }
+  100% {
+    transform: translate(0, 0); } }
+
+@keyframes wobble-to-top {
+  16.65% {
+    transform: translate(8px, -8px); }
+  33.3% {
+    transform: translate(-6px, 6px); }
+  49.95% {
+    transform: translate(4px, -4px); }
+  66.6% {
+    transform: translate(-2px, 2px); }
+  83.25% {
+    transform: translate(1px, -1px); }
+  100% {
+    transform: translate(0, 0); } }
+
+@keyframes wobble-top {
+  16.65% {
+    transform: skew(-12deg); }
+  33.3% {
+    transform: skew(10deg); }
+  49.95% {
+    transform: skew(-6deg); }
+  66.6% {
+    transform: skew(4deg); }
+  83.25% {
+    transform: skew(-2deg); }
+  100% {
+    transform: skew(0); } }
+
+@keyframes wobble-bottom {
+  16.65% {
+    transform: skew(-12deg); }
+  33.3% {
+    transform: skew(10deg); }
+  49.95% {
+    transform: skew(-6deg); }
+  66.6% {
+    transform: skew(4deg); }
+  83.25% {
+    transform: skew(-2deg); }
+  100% {
+    transform: skew(0); } }
+
+@keyframes wobble-skew {
+  16.65% {
+    transform: skew(-12deg); }
+  33.3% {
+    transform: skew(10deg); }
+  49.95% {
+    transform: skew(-6deg); }
+  66.6% {
+    transform: skew(4deg); }
+  83.25% {
+    transform: skew(-2deg); }
+  100% {
+    transform: skew(0); } }
+
+body, button {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #000000;
+  font-size: 1rem; }
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  text-decoration: none;
+  border-radius: .25rem;
+  font-size: 1rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition-duration: .3s;
+  transition-property: transform;
+  transform: perspective(1px) translateZ(0);
+  -webkit-font-smoothing: antialiased; }
+
+.btn-primary {
+  color: #ffffff;
+  background-color: #007bff;
+  border-color: #007bff; }
+  .btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0069d9; }
+
+.btn-secondary {
+  color: #ffffff;
+  background-color: #6c757d;
+  border-color: #6c757d; }
+  .btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #5a6268; }
+
+.btn-success {
+  color: #ffffff;
+  background-color: #28a745;
+  border-color: #28a745; }
+  .btn-success:hover {
+    background-color: #218838;
+    border-color: #218838; }
+
+.btn-info {
+  color: #ffffff;
+  background-color: #17a2b8;
+  border-color: #17a2b8; }
+  .btn-info:hover {
+    background-color: #138496;
+    border-color: #138496; }
+
+.btn-warning {
+  color: #ffffff;
+  background-color: #ffc107;
+  border-color: #ffc107; }
+  .btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #e0a800; }
+
+.btn-danger {
+  color: #ffffff;
+  background-color: #dc3545;
+  border-color: #dc3545; }
+  .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #c82333; }
+
+.btn-dark {
+  color: #ffffff;
+  background-color: #343a40;
+  border-color: #343a40; }
+  .btn-dark:hover {
+    background-color: #23272b;
+    border-color: #23272b; }
+
+.btn-grow:hover {
+  transform: scale(1.1); }
+
+.btn-shrink:hover {
+  transform: scale(0.9); }
+
+.btn-rotate:hover {
+  transform: rotate(4deg); }
+
+.btn-grow-rotate:hover {
+  transform: scale(1.1) rotate(4deg); }
+
+.btn-skew:hover {
+  transform: skew(-10deg); }
+
+.btn-pulse:hover {
+  animation-name: pulse;
+  animation-iteration-count: infinite; }
+
+.btn-push:hover {
+  animation-name: push;
+  animation-duration: 0.3s; }
+
+.btn-pop:hover {
+  animation-name: pop;
+  animation-duration: 0.3s; }
+
+.btn-wobble-horizontal:hover {
+  animation-name: wobble-horizontal; }
+
+.btn-wobble-vertical:hover {
+  animation-name: wobble-vertical; }
+
+.btn-wobble-to-bottom:hover {
+  animation-name: wobble-to-bottom; }
+
+.btn-wobble-to-top:hover {
+  animation-name: wobble-to-top; }
+
+.btn-wobble-top {
+  transform-origin: 0 100%; }
+  .btn-wobble-top:hover {
+    animation-name: wobble-top; }
+
+.btn-wobble-bottom {
+  transform-origin: 100% 0; }
+  .btn-wobble-bottom:hover {
+    animation-name: wobble-bottom; }
+
+.btn-wobble-skew:hover {
+  animation-name: wobble-skew; }
