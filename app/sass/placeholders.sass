@@ -2,3 +2,31 @@
     &:hover
         animation-duration: 1s
         animation-timing-function: linear
+
+%btn-color-movement
+    transition-property: color
+    &:hover
+        color: #000000
+        border-color: #fff !important
+    &:before
+        content: ""
+        position: absolute
+        z-index: -1
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background: #fff
+        transition-property: transform
+        transition-duration: .3s
+        transition-timing-function: ease-out
+
+%btn-border-movement
+    transition-property: color
+    &:before
+        content: ""
+        position: absolute
+        z-index: -1
+        background: #fff
+        transition-duration: .3s
+        transition-timing-function: ease-out

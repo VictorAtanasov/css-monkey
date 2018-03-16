@@ -5,3 +5,31 @@
     &:hover
         background-color: map-get($color-list-darker, $color)
         border-color: map-get($color-list-darker, $color)
+
+@mixin btn-border-movement($hover-pos, $border-align-1, $border-align-2, $border-align-3, $transition)
+    transition-property: color
+    &:hover
+        &:before
+            #{$hover-pos}: 0
+    &:before
+        content: ""
+        position: absolute
+        z-index: -1
+        background: #fff
+        transition-duration: .3s
+        transition-timing-function: ease-out
+        height: 3px
+        #{$border-align-1}: 0
+        #{$border-align-2}: 0
+        #{$border-align-3}: 100%
+        transition-property: #{$transition}
+
+
+@mixin btn-icon-basic($transform)
+    i
+        transition-duration: .1s
+        transition-property: transform
+        transition-timing-function: ease-out;
+    &:hover
+        i
+            transform: #{$transform}

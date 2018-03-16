@@ -5,7 +5,7 @@
     border: 1px solid transparent
     padding: .375rem .75rem
     text-decoration: none
-    border-radius: .25rem
+    //border-radius: .25rem
     font-size: 1rem
     transition: $standart-transition
     transition-duration: .3s 
@@ -93,3 +93,163 @@
         animation-name: wobble-skew
 
 
+.btn-fade
+    transition-duration: .3
+    transition-property:  color, background-color
+
+.btn-color-pulse
+    transition-duration: .5
+    transition-property: color, background-color
+    &:hover
+        animation-name: color-pulse
+        animation-iteration-count: infinite
+        animation-duration: 1.5s
+        animation-delay: 0.5s
+
+.btn-color-move-right
+    @extend %btn-color-movement
+    &:hover
+        &:before
+            transform: scaleX(1)
+    &:before
+        transform: scaleX(0)
+        transform-origin: 0 50%
+
+.btn-color-move-right-bounce
+    @extend %btn-color-movement
+    &:hover
+        &:before
+            transform: scaleX(1)
+            transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66)
+    &:before
+        transform: scaleX(0)
+        transform-origin: 0 50%
+        transition-duration: .5s
+        
+.btn-color-move-left
+    @extend %btn-color-movement
+    &:hover
+        &:before
+            transform: scaleX(1)
+    &:before
+        transform: scaleX(0)
+        transform-origin: 100% 50%
+
+.btn-color-move-left-bounce
+    @extend %btn-color-movement
+    &:hover
+        &:before
+            transform: scaleX(1)
+            transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66)
+    &:before
+        transform: scaleX(0)
+        transform-origin: 100% 50%
+        transition-duration: .5s
+
+.btn-color-move-bottom
+    @extend %btn-color-movement
+    &:hover
+        &:before
+            transform: scaleY(1)
+    &:before
+        transform: scaleY(0)
+        transform-origin: 50% 0
+
+.btn-color-move-bottom-bounce
+    @extend %btn-color-movement
+    &:hover
+        &:before
+            transform: scaleY(1)
+            transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66)
+    &:before
+        transform: scaleY(0)
+        transform-origin: 50% 0
+        transition-duration: .5s
+
+.btn-color-move-top
+    @extend %btn-color-movement
+    &:hover
+        &:before
+            transform: scaleY(1)
+    &:before
+        transform: scaleY(0)
+        transform-origin: 50% 100%
+
+.btn-color-move-top-bounce
+    @extend %btn-color-movement
+    &:hover
+        &:before
+            transform: scaleY(1)
+            transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66)            
+    &:before
+        transform: scaleY(0)
+        transform-origin: 50% 100%
+        transition-duration: .5s
+
+.btn-color-move-shutter-vertical
+    @extend %btn-color-movement
+    &:hover
+        &:before
+            transform: scaleY(1)
+    &:before
+        transform: scaleY(0)
+        transform-origin: 50%
+
+.btn-color-move-shutter-horizontal
+    @extend %btn-color-movement
+    &:hover
+        &:before
+            transform: scaleX(1)
+    &:before
+        transform: scaleX(0)
+        transform-origin: 50%
+            
+.btn-border-underline-right
+    @include btn-border-movement($hover-pos: left, $border-align-1: right, $border-align-2: bottom, $border-align-3: left, $transition: left)
+
+.btn-border-underline-left
+    @include btn-border-movement($hover-pos: right, $border-align-1: left, $border-align-2: bottom, $border-align-3: right, $transition: right)    
+
+.btn-border-underline   
+    @extend  %btn-border-movement
+    &:hover
+        &:before
+            left: 0
+            right: 0
+    &:before
+        height: 3px
+        left: 50%
+        bottom: 0
+        right: 50%
+        transition-property: left, right
+
+.btn-border-overline
+    @extend .btn-border-underline
+    &:before
+        top: 0
+
+.btn-border-overline-right
+    @include btn-border-movement($hover-pos: left, $border-align-1: right, $border-align-2: top, $border-align-3: left, $transition: left)    
+
+.btn-border-overline-left
+    @include btn-border-movement($hover-pos: right, $border-align-1: left, $border-align-2: top, $border-align-3: right, $transition: right)    
+
+.btn-icon-left
+    @include btn-icon-basic(translateX(-4px))
+
+.btn-icon-right
+    @include btn-icon-basic(translateX(4px))
+    
+.btn-icon-top
+    @include btn-icon-basic(translateY(-4px))
+
+.btn-icon-bottom
+    @include btn-icon-basic(translateY(4px))
+
+.btn-icon-grow
+    @include btn-icon-basic(scale(1.3) translateZ(0))
+
+.btn-icon-rotate
+    @include btn-icon-basic(rotate(360deg))
+    i
+        transition-duration: 1s
