@@ -14,6 +14,10 @@
     -webkit-font-smoothing: antialiased
 
 @each $color, $color-value in $color-list
+    .btn-outline-#{$color}
+        @include outline-button-mixin($color, $color-value)
+
+@each $color, $color-value in $color-list
     .btn-#{$color}
         @include button-mixin($color, $color-value)
 
@@ -249,7 +253,40 @@
 .btn-icon-grow
     @include btn-icon-basic(scale(1.3) translateZ(0))
 
+.btn-icon-shrink
+    @include btn-icon-basic(scale(0.8) translateZ(0))
+
 .btn-icon-rotate
     @include btn-icon-basic(rotate(360deg))
     i
         transition-duration: 1s
+
+.btn-icon-color
+    i
+        transition-duration: .5s
+        transition-property: color
+    &:hover
+        i
+            color: #000000
+
+.btn-icon-pop
+    @include btn-icon-animation(pop, .3s, 1, linear)
+
+.btn-icon-push
+    @include btn-icon-animation(push, .3s, 1, linear)
+
+.btn-icon-float
+    @include btn-icon-basic(translateY(-4px))
+    i
+        transition-duration: .3s
+
+.btn-icon-sink
+    @include btn-icon-basic(translateY(4px))
+    i
+        transition-duration: .3s
+
+.btn-icon-hor-wobble
+    @include btn-icon-animation(wobble-horizontal, 1s, 1, ease-in-out)
+
+.btn-icon-ver-wobble
+    @include btn-icon-animation(wobble-vertical, 1s, 1, ease-in-out)

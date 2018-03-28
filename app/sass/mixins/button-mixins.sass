@@ -6,6 +6,14 @@
         background-color: map-get($color-list-darker, $color)
         border-color: map-get($color-list-darker, $color)
 
+@mixin outline-button-mixin($color, $color-value)
+    color: $color-value
+    background-color: $white
+    border-color: $color-value
+    &:hover
+        background-color: $color-value
+        color: $white
+
 @mixin btn-border-movement($hover-pos, $border-align-1, $border-align-2, $border-align-3, $transition)
     transition-property: color
     &:hover
@@ -29,7 +37,19 @@
     i
         transition-duration: .1s
         transition-property: transform
-        transition-timing-function: ease-out;
+        transition-timing-function: ease-out
     &:hover
         i
             transform: #{$transform}
+
+@mixin btn-icon-animation($animation, $duration, $iteration, $function)
+    i
+        transform: translateZ(0)
+        transition-duration: $duration
+        transition-property: transform
+    &:hover
+        i
+            animation-name: $animation
+            animation-duration: $duration
+            transition-timing-function: $function
+            animation-iteration-count: $iteration
