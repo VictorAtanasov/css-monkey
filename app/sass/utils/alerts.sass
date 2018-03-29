@@ -1,0 +1,9 @@
+.alert
+    position: relative
+    border: 1px solid transparent
+    padding: .75rem 1.25rem
+    margin-bottom: 1rem
+    
+@each $color, $color-value in $color-list
+    .alert-#{$color}
+        @include alert-mixin($color, $color-value)

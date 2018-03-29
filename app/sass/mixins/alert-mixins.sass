@@ -1,0 +1,7 @@
+@mixin alert-mixin($color, $color-value)
+    background-color: lighten($color-value, 40%)
+    border-color: lighten($color-value, 36%)
+    color: darken($color-value, 20%)
+    .alert-link
+        color: darken($color-value, 40%)
+        font-weight: bold
